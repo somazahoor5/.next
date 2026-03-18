@@ -73,19 +73,38 @@ export default function AboutPage() {
       </div>
 
       {/* Journey Timeline */}
-      <div className="max-w-4xl mx-auto mb-24">
-        <h2 className="text-3xl font-semibold text-center mb-12">My Journey</h2>
-        <div className="relative border-l-2 border-gray-300 pl-6 space-y-10">
-          {journey.map((item, idx) => (
-            <div key={idx} className="relative group hover:scale-105 transition transform">
-              <div className={`absolute -left-3 top-0 w-6 h-6 rounded-full border-2 border-white ${item.color} group-hover:shadow-lg transition`}></div>
-              <h3 className="font-semibold text-lg">{item.title}</h3>
-              <p className="text-gray-600">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+<div className="max-w-5xl mx-auto mb-28 px-4">
+  <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
+    My Journey
+  </h2>
 
+  <div className="relative border-l-4 border-indigo-200 pl-8 space-y-12">
+
+    {journey.map((item, idx) => (
+      <div
+        key={idx}
+        className="relative group bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
+      >
+
+        {/* Dot */}
+        <div
+          className={`absolute -left-[38px] top-6 w-6 h-6 rounded-full border-4 border-white ${item.color} group-hover:scale-110 transition`}
+        ></div>
+
+        {/* Content */}
+        <h3 className="font-semibold text-xl text-gray-800 mb-2">
+          {item.title}
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          {item.desc}
+        </p>
+
+      </div>
+    ))}
+
+  </div>
+</div>
       {/* Developer Stats */}
       <div className="max-w-6xl mx-auto mb-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div className="bg-white/50 backdrop-blur-md rounded-xl p-6 shadow-md hover:shadow-xl transition">
